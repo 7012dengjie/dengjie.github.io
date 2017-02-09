@@ -1,90 +1,187 @@
 <!DOCTYPE html>
-
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="Refresh" Content="10; ./welcome.html">
-
-<title>The ZhiSheng's Website</title>
-<style type="text/css">
-    canvas {display: block;}
-	html
-	{
-	background:black;
-	margin:0px;
-	padding:0px;
-	border:0px;
-	height:100%;
-	width:100%;
-	overflow:hidden;
-	}
-</style>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>我的简历</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/style.css" media="screen">
+<script src="js/jquery.js"></script>
 </head>
+
 <body>
-  <canvas id="c">
-  <script type="text/javascript">
-		window.onload=function()
-		{
-			var c = document.getElementById("c");
-			var ctx = c.getContext("2d");
-
-			c.addEventListener('click', function(e)
-			{
-				location.href="./welcome.html";
-			}, false);
-
-			//全屏显示
-			c.height = window.innerHeight;
-			c.width = window.innerWidth;
-
-			var txts = "052あ7B8い甘GANE士CHENG成う1え9お甘かき士くけこ成EFCADG甘HIJK士LMNO成PQRSTU甘VWXYZE士FCADGH成IJKLM";
-			txts = txts.split("");
-
-			var font_size = 28;
-			var columns = c.width/font_size;
-
-			//每行要输出数组
-			var drops = [];
-
-			for(var x = 0; x < columns; x++)
-				drops[x] = 1;
-
-			//字符随机颜色
-			var wh_color = new Array();
-			wh_color[0]="#57CE13";
-			wh_color[1]="#50BF7F";
-			wh_color[2]="#50BF7F";
-
-			//绘出字符
-			function draw()
-			{
-				//黑色背景，半透明显示
-				ctx.fillStyle = "rgba(0, 0, 0, 0.09)";
-				ctx.fillRect(0, 0, c.width, c.height);
-
-				//ctx.fillStyle = "#50BF7F";
-				ctx.fillStyle = wh_color[parseInt(Math.random()*100+1)%3];
-				ctx.font = font_size + "px arial";
-
-				//drops循环
-				for(var i = 0; i < drops.length; i++)
-				{
-					//随机打印字符
-					var text = txts[Math.floor(Math.random()*txts.length)];
-
-					//x = i*font_size
-					//y = value of drops[i]*font_size
-					ctx.fillText(text, i*font_size, drops[i]*font_size);
-
-					if(drops[i]*font_size > c.height || Math.random() > 0.95)
-						drops[i] = 0;
-
-					//Y坐标增加
-					drops[i]++;
-				}
-			}
-			setInterval(draw, 50);
-		}
-</script>
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+		<div class="container">
+		<div class="navbar-header"> 
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".js-navbar-scrollspy" aria-expanded="false" aria-controls="navbar">
+        	<span class="sr-only">Toggle navigation</span>
+        	<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand">Deng Jie</a>
+		</div>	
+		<div class="collapse navbar-collapse js-navbar-scrollspy" id="navbar">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#abme">关于我</a></li>
+                <li><a href="#skills">相关技能</a></li>
+				<li><a href="#demo">部分作品</a></li>
+				<li><a href="#contact">联系我</a></li>
+			</ul>
+		</div>
+		</div>	
+	</nav>
+<header class="intro">
+<div id="top-header" class="top-header jumbotron">
+    <div class="container">
+    <h1>Hello, I'm Deng Jie!</h1>
+    <div class="row">
+     <div class="col-sm-6 col-md-4"> 
+<h3>您好！我叫邓婕</h3> 
+     <p>来自河北现居北京，大专——北京航空航天大学目前在读（中专就读与网站前端开发专业）。</p>
+        <p>我的性格沉稳,做事认真,　对待工作认真负责，善于沟通、有很强的团队精神；并且热爱互联网，喜欢这份工作给我带来的满足感！</p>
+        <p>web前端</p>
+        <p>五年工作经验&nbsp;/&nbsp;24岁&nbsp;/&nbsp;大专</p>
+        <p><a href="#abme" class="btn btn-default btn-lg page-scroll " role="button">About me</a></p>
+   
+   </div> 
+     </div>   
+    </div>
+</div>
+</header>
+<div class="about">
+<div class="container">
+<h1 class="text-center title-top" id="abme">关于我</h1><hr class="title_top_hr">
+<div class="row">
+<div class="col-md-12 text-center">
+<img class="img-responsive" src="images/about.jpg">
+</div>
+<div class="col-sm-8 col-md-offset-2">
+<p>于2012年8月至2016年5月在北京华夏天工网络技术有限公司这家公司致力于为大中型外包机构提供网络整合营销、网络品牌传播、网络广告策划。员工人数达到800余人以上，人数多导致公司制度以及工作分配相对严格。任职web前端岗位，任职期间主要接触HTML、HTML5、CSS、CSS3、jQuery、JavaScript、Bootstrap、LESS、dedecms、phpcms等前端语言，并于私下对Angularjs和Reactjs进行了学习。</p>
+<p>于2016年6月至至今在北京爱耳时代医疗网络技术有限公司这家公司致力于美国耳蜗网络品牌传播。任职web前端岗位，任职期间主要接触HTML、HTML5、CSS、CSS3、jQuery、JavaScript、Bootstrap、LESS、dedecms、phpcms、服务器等前端语言，并于私下对Angularjs和Reactjs进行了学习和对PHP、MySQL了解。</p>
+<p>web前端：一、主要负责利用Photoshop、Firework、Sublime对设计稿进行切图，通过采用DIV+CSS样式布局排版，使用jQuery完成页面的动态效果，使用JavaScript增加页面交互性。二、主要负责利用HTML5、CSS3、Bootstrap等开发兼容多终端的响应式页面。三、在IE、Firefox等浏览器进行页面兼容性调试。四、织梦程序嵌套实现可在线预览、百度搜索。四、后期网站维护</p>
+<p>自身对移动互联网产品和web前端语言技术有强烈兴趣，具备学习能力和进取心，有强烈的团队意识和执行力，耐吃苦。</p>
+</div>
+</div>
+</div>
+</div>
+<div id="skills" class="text-center">
+<div class="container">
+<h1 class="text-center title-top" id="skills">我的技能</h1><hr class="title_top_hr">
+<div class="row">
+      <div class="col-md-4 col-sm-6 skill"> <span class="chart" data-percent="90"> <span class="percent">90</span> <canvas height="152" width="152"></canvas></span>
+        <h4>HTML+CSS</h4>
+      </div>
+      <div class="col-md-4 col-sm-6 skill"> <span class="chart" data-percent="85"> <span class="percent">85</span> <canvas height="152" width="152"></canvas></span>
+        <h4>HTML5+CSS3</h4>
+      </div>
+      <div class="col-md-4 col-sm-6 skill"> <span class="chart" data-percent="80"> <span class="percent">80</span> <canvas height="152" width="152"></canvas></span>
+        <h4>JavaScript+jQuery</h4>
+      </div>
+      <div class="col-md-4 col-sm-6 skill"> <span class="chart" data-percent="90"> <span class="percent">90</span> <canvas height="152" width="152"></canvas></span>
+        <h4>Photoshop</h4>
+      </div>
+      <div class="col-md-4 col-sm-6 skill"> <span class="chart" data-percent="90"> <span class="percent">90</span> <canvas height="152" width="152"></canvas></span>
+        <h4>Dedecms+Phpcms</h4>
+      </div>
+      <div class="col-md-4 col-sm-6 skill"> <span class="chart" data-percent="85"> <span class="percent">85</span> <canvas height="152" width="152"></canvas></span>
+        <h4>Bootstrap+LESS+SASS</h4>
+      </div>
+    </div>
+</div>
+	<script src="js/plugins.js"></script> 
+	<script src="js/script.js"></script> 
+</div>
+<div class="container">
+<h1 class="text-center title-top" id="demo">部分作品</h1><hr class="title_top_hr">
+	<div class="row">
+		<div class="col-md-4 col-sm-12">
+			<div class="div-img">
+			<a href="www.aier120.com" target="_blank">
+			<img src="images/01.jpg" class="img-responsive img-circle">
+			</a>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-12">
+			<div class="div-img  div-img-2" style="background-color:#1FA4B6">
+			<a href="www.longerwang.com"  target="_blank">
+			<img src="images/02.jpg" class="img-responsive img-circle">
+			</a>			
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-12">
+			<div class="div-img  div-img-2" style="background-color:#000000">
+			<a href="http://fkm.xadsyy.com/"  target="_blank">
+			<img src="images/03.jpg" class="img-responsive img-circle">
+			</a>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-12">
+			<div class="div-img" style="background-color:#1D83C1">
+			<a href=""  target="_blank">
+			<img src="images/04.jpg" class="img-responsive img-circle">
+			</a>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-12">
+			<div class="div-img" style="background-color:#1037B5">
+			<a href="" target="_blank">
+			<img src="images/05.jpg" class="img-responsive img-circle">
+			</a>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-12">
+			<div class="div-img" style="background-color:#CCB2A3">
+			<a href="" target="_blank">
+			<img src="images/06.jpg" class="img-responsive img-circle">
+			</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="testimonials">
+<div class="container">
+<h1 class="text-center title-top" id="contact">联系我</h1><hr class="title_top_hr">
+	<div class="row">
+		<div class="col-md-2 col-md-offset-4 col-sm-12">
+		<div class="div-contlf">
+			<img src="images/weixin.jpg" class="img-responsive">
+		</div>
+		</div>
+		<div class="col-md-3 col-sm-12">
+			<div class="div-contrg">
+			<h6>邓婕:</h6>
+			<p>Tel:18201661522</p>
+			<p>E-mail:727477084@qq.com</p>
+			<p>QQ:727477084</p>
+            <p>微信号:jie727477084</p>
+		</div>
+		</div>
+	</div>
+</div>
+</div>
+<footer>
+	<nav class="navbar  navbar-custom " role="navigation">
+	<div class="container">
+		<p class="text-center">THANKS</span>
+	</div>
+	</nav>
+</footer>
+<a id="toTop" onClick="window.scrollTo(0,0);" style="display: block;"><span id="toTopHover" style="opacity: 0;"></span></a>
+	<script src="js/jquery.min.js"></script> 
+	<script src="js/bootstrap.min.js"></script> 
+    <script>
+		$(document).ready(function(){
+			$(".div-img").hover(
+				function(){
+					$(this).addClass("animated pulse");
+				},
+				function(){
+					$(this).removeClass("animated pulse");
+				});
+			});
+	</script>
 </body>
 </html>
